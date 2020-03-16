@@ -1,6 +1,13 @@
 # buddy_app
 
-A new Flutter project.
+It's My Research Project for Flutter Boiler Plate. 
+
+research for :
+- State management (bloc pattern); 
+- Dependency injection; 
+- Clean Architecture/project structure; 
+- Widget Testing; 
+- Unit Testing (logic & BLoC);
 
 ## Getting Started
 
