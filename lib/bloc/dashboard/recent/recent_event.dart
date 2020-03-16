@@ -10,3 +10,8 @@ class GetRecentEvent extends RecentEvent {
     return [];
   }
 }
+
+class DeleteAllRecent extends RecentEvent{
+  @override
+  List<Object> get props => [];
+}

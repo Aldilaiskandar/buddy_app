@@ -23,7 +23,6 @@ class RecentDataState extends RecentState{
 }
 
 class RecentLoading extends RecentState{
-
   @override
   List<Object> get props {
     return [];

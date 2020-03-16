@@ -6,6 +6,7 @@ import 'package:buddy_app/resources/repository/spend_repository.dart';
 import 'package:equatable/equatable.dart';
 
 part 'recent_event.dart';
+
 part 'recent_state.dart';
 
 class RecentBloc extends Bloc<RecentEvent, RecentState> {
@@ -18,11 +19,14 @@ class RecentBloc extends Bloc<RecentEvent, RecentState> {
 
   @override
   Stream<RecentState> mapEventToState(RecentEvent event,) async* {
-    if(event is GetRecentEvent){
+    if (event is GetRecentEvent) {
       List<Spend> spends;
       await spendRepository.getAllSpend().then((value) => spends = value);
       yield RecentDataState(spends);
-    }else{
+    } else if (event is DeleteAllRecent) {
+      await spendRepository.deleteAll();
+      yield state;
+    } else {
       RecentLoading();
     }
   }
